@@ -8,18 +8,19 @@
 import Foundation
 
 protocol AlbumCellViewModel {
-	var albumImageUrl: String { get }
+	var albumImageUrl: URL? { get }
 	var albumTitle: String { get }
 	var artistTitle: String { get }
 }
 
 final class AlbumCellViewModelImpl: AlbumCellViewModel {
-	let albumImageUrl: String
+	let albumImageUrl: URL?
 	let albumTitle: String
 	let artistTitle: String
 
 	init(albumImageUrl: String, albumTitle: String, artistTitle: String) {
-		self.albumImageUrl = albumImageUrl
+		let imageUrl = URL(string: albumImageUrl)
+		self.albumImageUrl = imageUrl
 		self.albumTitle = albumTitle
 		self.artistTitle = artistTitle
 	}

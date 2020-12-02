@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
@@ -15,8 +16,8 @@ class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
 	@IBOutlet weak var artistLabel: UILabel!
 	
 	func configure(with model: AlbumCellViewModel) {
-		
-		albumTitleLabel.text  = model.albumTitle
-		artistLabel.text  =  model.artistTitle
+		self.albumImageView.sd_setImage(with: model.albumImageUrl, completed: nil)
+		self.albumTitleLabel.text  = model.albumTitle
+		self.artistLabel.text  =  model.artistTitle
 	}
 }

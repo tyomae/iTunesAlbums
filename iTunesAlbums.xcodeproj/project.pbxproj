@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5771F0A9ABBCA90F11C28FD7 /* Pods_iTunesAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */; };
 		EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34592577CEF1002DAD06 /* AppDelegate.swift */; };
 		EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */; };
 		EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA345F2577CEF1002DAD06 /* Main.storyboard */; };
@@ -22,9 +23,16 @@
 		EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAA349A2577E592002DAD06 /* AlbumCollectionViewCell.xib */; };
 		EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */; };
 		EEAA34A62577E938002DAD06 /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34A52577E938002DAD06 /* AlbumCellViewModel.swift */; };
+		EEAA34B22577EEAE002DAD06 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34B12577EEAE002DAD06 /* NetworkClient.swift */; };
+		EEAA34B62577EF14002DAD06 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */; };
+		EEAA34BC2577F038002DAD06 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34BB2577F038002DAD06 /* AlbumService.swift */; };
+		EEAA34C02577F779002DAD06 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34BF2577F779002DAD06 /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DB2C106E584FEE6E63E71E8 /* Pods-iTunesAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAlbums.release.xcconfig"; path = "Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums.release.xcconfig"; sourceTree = "<group>"; };
+		22B375688918831804DFA3ED /* Pods-iTunesAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAlbums.debug.xcconfig"; path = "Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums.debug.xcconfig"; sourceTree = "<group>"; };
+		363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34562577CEF1002DAD06 /* iTunesAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34592577CEF1002DAD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +50,10 @@
 		EEAA349A2577E592002DAD06 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		EEAA34A52577E938002DAD06 /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
+		EEAA34B12577EEAE002DAD06 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
+		EEAA34BB2577F038002DAD06 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
+		EEAA34BF2577F779002DAD06 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5771F0A9ABBCA90F11C28FD7 /* Pods_iTunesAlbums.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322D96B50B744CDF560C4DD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22B375688918831804DFA3ED /* Pods-iTunesAlbums.debug.xcconfig */,
+				0DB2C106E584FEE6E63E71E8 /* Pods-iTunesAlbums.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		46E6209979A49FD077461B14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EEAA344D2577CEF1002DAD06 = {
 			isa = PBXGroup;
 			children = (
 				EEAA34582577CEF1002DAD06 /* iTunesAlbums */,
 				EEAA34572577CEF1002DAD06 /* Products */,
+				322D96B50B744CDF560C4DD1 /* Pods */,
+				46E6209979A49FD077461B14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAA346F2577D2A6002DAD06 /* AlbumsListViewController */,
+				EEAA34AF2577EE58002DAD06 /* Services */,
 				EEAA347F2577D58D002DAD06 /* Helpers */,
 				EEAA34942577E009002DAD06 /* Extensions */,
 				EEAA34882577D642002DAD06 /* Support */,
@@ -166,6 +199,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EEAA34AF2577EE58002DAD06 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34BB2577F038002DAD06 /* AlbumService.swift */,
+				EEAA34B02577EE99002DAD06 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEAA34B02577EE99002DAD06 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34B12577EEAE002DAD06 /* NetworkClient.swift */,
+				EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */,
+				EEAA34BF2577F779002DAD06 /* Album.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEAA346A2577CEF5002DAD06 /* Build configuration list for PBXNativeTarget "iTunesAlbums" */;
 			buildPhases = (
+				B83A5EB5586D467354C95563 /* [CP] Check Pods Manifest.lock */,
 				EEAA34522577CEF1002DAD06 /* Sources */,
 				EEAA34532577CEF1002DAD06 /* Frameworks */,
 				EEAA34542577CEF1002DAD06 /* Resources */,
+				423AD0667522F8A4D7C924DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,15 +287,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		423AD0667522F8A4D7C924DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B83A5EB5586D467354C95563 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iTunesAlbums-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EEAA34522577CEF1002DAD06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA34BC2577F038002DAD06 /* AlbumService.swift in Sources */,
 				EEAA349B2577E592002DAD06 /* AlbumCollectionViewCell.swift in Sources */,
 				EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */,
 				EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */,
+				EEAA34B22577EEAE002DAD06 /* NetworkClient.swift in Sources */,
+				EEAA34C02577F779002DAD06 /* Album.swift in Sources */,
 				EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */,
+				EEAA34B62577EF14002DAD06 /* BaseNetworkService.swift in Sources */,
 				EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */,
 				EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */,
 				EEAA34962577E028002DAD06 /* UICollectionView+registerCell.swift in Sources */,
@@ -391,6 +491,7 @@
 		};
 		EEAA346B2577CEF5002DAD06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22B375688918831804DFA3ED /* Pods-iTunesAlbums.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -411,6 +512,7 @@
 		};
 		EEAA346C2577CEF5002DAD06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DB2C106E584FEE6E63E71E8 /* Pods-iTunesAlbums.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
