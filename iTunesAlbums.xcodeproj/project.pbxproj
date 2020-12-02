@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34592577CEF1002DAD06 /* AppDelegate.swift */; };
 		EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */; };
-		EEAA345E2577CEF1002DAD06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345D2577CEF1002DAD06 /* ViewController.swift */; };
 		EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA345F2577CEF1002DAD06 /* Main.storyboard */; };
 		EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAA34622577CEF4002DAD06 /* Assets.xcassets */; };
 		EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA34642577CEF4002DAD06 /* LaunchScreen.storyboard */; };
+		EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */; };
+		EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */; };
+		EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34802577D5AF002DAD06 /* BaseViewController.swift */; };
+		EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34852577D5E5002DAD06 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EEAA34562577CEF1002DAD06 /* iTunesAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34592577CEF1002DAD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEAA345D2577CEF1002DAD06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEAA34602577CEF1002DAD06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEAA34622577CEF4002DAD06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEAA34652577CEF4002DAD06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEAA34672577CEF5002DAD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
+		EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsListViewController.xib; sourceTree = "<group>"; };
+		EEAA34802577D5AF002DAD06 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EEAA34852577D5E5002DAD06 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		EEAA34582577CEF1002DAD06 /* iTunesAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				EEAA346F2577D2A6002DAD06 /* AlbumsListViewController */,
+				EEAA347F2577D58D002DAD06 /* Helpers */,
+				EEAA34882577D642002DAD06 /* Support */,
+			);
+			path = iTunesAlbums;
+			sourceTree = "<group>";
+		};
+		EEAA346F2577D2A6002DAD06 /* AlbumsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34762577D36D002DAD06 /* View */,
+			);
+			path = AlbumsListViewController;
+			sourceTree = "<group>";
+		};
+		EEAA34762577D36D002DAD06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */,
+				EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEAA347F2577D58D002DAD06 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34802577D5AF002DAD06 /* BaseViewController.swift */,
+				EEAA34852577D5E5002DAD06 /* ViewModel.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EEAA34882577D642002DAD06 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				EEAA34592577CEF1002DAD06 /* AppDelegate.swift */,
 				EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */,
-				EEAA345D2577CEF1002DAD06 /* ViewController.swift */,
 				EEAA345F2577CEF1002DAD06 /* Main.storyboard */,
 				EEAA34622577CEF4002DAD06 /* Assets.xcassets */,
 				EEAA34642577CEF4002DAD06 /* LaunchScreen.storyboard */,
 				EEAA34672577CEF5002DAD06 /* Info.plist */,
 			);
-			path = iTunesAlbums;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +167,7 @@
 			files = (
 				EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */,
 				EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */,
+				EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */,
 				EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEAA345E2577CEF1002DAD06 /* ViewController.swift in Sources */,
+				EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */,
+				EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */,
+				EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */,
 				EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */,
 				EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */,
 			);
@@ -288,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
-				INFOPLIST_FILE = iTunesAlbums/Info.plist;
+				INFOPLIST_FILE = iTunesAlbums/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DT65SS5ZB;
-				INFOPLIST_FILE = iTunesAlbums/Info.plist;
+				INFOPLIST_FILE = iTunesAlbums/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
