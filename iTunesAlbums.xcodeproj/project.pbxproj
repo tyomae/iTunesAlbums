@@ -16,6 +16,12 @@
 		EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */; };
 		EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34802577D5AF002DAD06 /* BaseViewController.swift */; };
 		EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34852577D5E5002DAD06 /* ViewModel.swift */; };
+		EEAA34912577DF27002DAD06 /* AlbumsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34902577DF27002DAD06 /* AlbumsListViewModel.swift */; };
+		EEAA34962577E028002DAD06 /* UICollectionView+registerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34952577E028002DAD06 /* UICollectionView+registerCell.swift */; };
+		EEAA349B2577E592002DAD06 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34992577E592002DAD06 /* AlbumCollectionViewCell.swift */; };
+		EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAA349A2577E592002DAD06 /* AlbumCollectionViewCell.xib */; };
+		EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */; };
+		EEAA34A62577E938002DAD06 /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34A52577E938002DAD06 /* AlbumCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsListViewController.xib; sourceTree = "<group>"; };
 		EEAA34802577D5AF002DAD06 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EEAA34852577D5E5002DAD06 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EEAA34902577DF27002DAD06 /* AlbumsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewModel.swift; sourceTree = "<group>"; };
+		EEAA34952577E028002DAD06 /* UICollectionView+registerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+registerCell.swift"; sourceTree = "<group>"; };
+		EEAA34992577E592002DAD06 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEAA349A2577E592002DAD06 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		EEAA34A52577E938002DAD06 /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			children = (
 				EEAA346F2577D2A6002DAD06 /* AlbumsListViewController */,
 				EEAA347F2577D58D002DAD06 /* Helpers */,
+				EEAA34942577E009002DAD06 /* Extensions */,
 				EEAA34882577D642002DAD06 /* Support */,
 			);
 			path = iTunesAlbums;
@@ -73,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				EEAA34762577D36D002DAD06 /* View */,
+				EEAA348E2577D777002DAD06 /* ViewModel */,
+				EEAA34982577E521002DAD06 /* Cell */,
 			);
 			path = AlbumsListViewController;
 			sourceTree = "<group>";
@@ -91,6 +106,7 @@
 			children = (
 				EEAA34802577D5AF002DAD06 /* BaseViewController.swift */,
 				EEAA34852577D5E5002DAD06 /* ViewModel.swift */,
+				EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -106,6 +122,48 @@
 				EEAA34672577CEF5002DAD06 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		EEAA348E2577D777002DAD06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34902577DF27002DAD06 /* AlbumsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EEAA34942577E009002DAD06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34952577E028002DAD06 /* UICollectionView+registerCell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEAA34982577E521002DAD06 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34A22577E8F4002DAD06 /* View */,
+				EEAA34A32577E8FE002DAD06 /* ViewModel */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EEAA34A22577E8F4002DAD06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34992577E592002DAD06 /* AlbumCollectionViewCell.swift */,
+				EEAA349A2577E592002DAD06 /* AlbumCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEAA34A32577E8FE002DAD06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34A52577E938002DAD06 /* AlbumCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +225,7 @@
 			files = (
 				EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */,
 				EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */,
+				EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */,
 				EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */,
 				EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */,
 			);
@@ -179,10 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAA349B2577E592002DAD06 /* AlbumCollectionViewCell.swift in Sources */,
 				EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */,
 				EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */,
+				EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */,
 				EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */,
 				EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */,
+				EEAA34962577E028002DAD06 /* UICollectionView+registerCell.swift in Sources */,
+				EEAA34912577DF27002DAD06 /* AlbumsListViewModel.swift in Sources */,
+				EEAA34A62577E938002DAD06 /* AlbumCellViewModel.swift in Sources */,
 				EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

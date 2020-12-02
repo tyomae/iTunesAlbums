@@ -7,15 +7,26 @@
 
 import UIKit
 
-class AlbumsListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AlbumsListViewController:  BaseViewController<AlbumsListViewModelImpl>, UICollectionViewDelegate, UICollectionViewDataSource {
 	
-	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var collectionView: UICollectionView! {
+		didSet {
+			self.collectionView.registerNib(for: AlbumCollectionViewCell.self)
+		}
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
 		
     }
+	
+	override func processViewModel(state: AlbumsListViewModelImpl.State) {
+		switch state {
+			case .dataUpdated:
+				self.collectionView.reloadData()
+		}
+	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return 1

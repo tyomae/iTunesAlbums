@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AlbumCollectionViewCell" customModule="iTunesAlbums" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="244"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="244"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-Lo-7vq" userLabel="albumImage">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JkZ-Lo-7vq" secondAttribute="height" multiplier="1:1" id="ued-53-58g"/>
+                            <constraint firstAttribute="width" constant="120" id="xe4-g3-UEs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Album title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r34-s7-3EF">
+                        <rect key="frame" x="0.0" y="130" width="120" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCp-wT-9qb">
+                        <rect key="frame" x="0.0" y="162" width="120" height="82"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="r34-s7-3EF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="08S-f9-Dg5"/>
+                <constraint firstItem="yCp-wT-9qb" firstAttribute="top" secondItem="r34-s7-3EF" secondAttribute="bottom" constant="10" id="6C7-Bc-gp5"/>
+                <constraint firstAttribute="trailing" secondItem="r34-s7-3EF" secondAttribute="trailing" id="810-uA-Ogx"/>
+                <constraint firstAttribute="trailing" secondItem="yCp-wT-9qb" secondAttribute="trailing" id="Rs6-ES-G8S"/>
+                <constraint firstAttribute="bottom" secondItem="yCp-wT-9qb" secondAttribute="bottom" id="WRg-sg-4FE"/>
+                <constraint firstItem="r34-s7-3EF" firstAttribute="top" secondItem="JkZ-Lo-7vq" secondAttribute="bottom" constant="10" id="ZvZ-8L-hKg"/>
+                <constraint firstItem="JkZ-Lo-7vq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nco-2d-pzJ"/>
+                <constraint firstItem="yCp-wT-9qb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="os4-SI-HGU"/>
+                <constraint firstAttribute="trailing" secondItem="JkZ-Lo-7vq" secondAttribute="trailing" id="pb8-y1-0AD"/>
+                <constraint firstItem="JkZ-Lo-7vq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uiQ-P0-cwX"/>
+            </constraints>
+            <size key="customSize" width="120" height="244"/>
+            <connections>
+                <outlet property="albumImageView" destination="JkZ-Lo-7vq" id="Fsy-w2-RXg"/>
+                <outlet property="albumTitleLabel" destination="r34-s7-3EF" id="hYE-2W-s8i"/>
+                <outlet property="artistLabel" destination="yCp-wT-9qb" id="Dsc-eH-Hoc"/>
+            </connections>
+            <point key="canvasLocation" x="128.98550724637681" y="132.58928571428572"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
