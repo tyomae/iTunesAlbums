@@ -7,7 +7,7 @@
 
 protocol AlbumService {
 	func getAlbums(searchRequest: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void))
-	//	func getCurrentAlbum(currentId: Int, completion: @escaping((Result<Album, APIError>) -> Void))
+	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void))
 }
 
 class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
@@ -27,11 +27,11 @@ class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
 	}
 	
 	func getAlbums(searchRequest: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void)) {
-			let searchRequestWitoutSpace = searchRequest.replacingOccurrences(of: " ", with: "")
-			request(endpoint: Endpoint.albumsList(searchRequest: searchRequestWitoutSpace).stringEndPoint, method: .GET, completion: completion)
+		let searchRequestWitoutSpace = searchRequest.replacingOccurrences(of: " ", with: "")
+		request(endpoint: Endpoint.albumsList(searchRequest: searchRequestWitoutSpace).stringEndPoint, method: .GET, completion: completion)
 	}
 	
-	//	func getCurrentAlbum(currentId: Int, completion: @escaping((Result<Album, APIError>) -> Void)) {
-	//		request(endpoint: Endpoint.currentAlbum(albumId: currentId).stringEndPoint, method: .GET, completion: completion)
-	//	}
+	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void)) {
+		request(endpoint: Endpoint.currentAlbum(albumId: albumId).stringEndPoint, method: .GET, completion: completion)
+	}
 }

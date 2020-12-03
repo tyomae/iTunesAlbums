@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		5771F0A9ABBCA90F11C28FD7 /* Pods_iTunesAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */; };
 		EE60DB7825781CAC0085083D /* AlbumsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DB7625781CAC0085083D /* AlbumsListViewController.xib */; };
+		EE60DBCE257928B30085083D /* AlbumInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBCC257928B20085083D /* AlbumInfoViewController.swift */; };
+		EE60DBCF257928B30085083D /* AlbumInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DBCD257928B20085083D /* AlbumInfoViewController.xib */; };
+		EE60DBD325792AE40085083D /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBD225792AE40085083D /* Song.swift */; };
+		EE60DBD725792CC90085083D /* AlbumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBD625792CC90085083D /* AlbumInfoViewModel.swift */; };
+		EE60DBDB257930010085083D /* AlbumInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBD9257930010085083D /* AlbumInfoCollectionViewCell.swift */; };
+		EE60DBDC257930010085083D /* AlbumInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DBDA257930010085083D /* AlbumInfoCollectionViewCell.xib */; };
+		EE60DBE2257932A20085083D /* AlbumInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBE1257932A20085083D /* AlbumInfoCellViewModel.swift */; };
+		EE60DBE7257938750085083D /* SongInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBE5257938750085083D /* SongInfoCollectionViewCell.swift */; };
+		EE60DBE8257938750085083D /* SongInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DBE6257938750085083D /* SongInfoCollectionViewCell.xib */; };
+		EE60DBEB257938870085083D /* SongInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBEA257938870085083D /* SongInfoCellViewModel.swift */; };
+		EE60DBEF25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBED25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift */; };
+		EE60DBF025793BF20085083D /* AlbumCopyrightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DBEE25793BF20085083D /* AlbumCopyrightCollectionViewCell.xib */; };
+		EE60DBF325793DB50085083D /* AlbumCopyrightCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBF225793DB50085083D /* AlbumCopyrightCellViewModel.swift */; };
 		EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34592577CEF1002DAD06 /* AppDelegate.swift */; };
 		EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */; };
 		EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA345F2577CEF1002DAD06 /* Main.storyboard */; };
@@ -34,6 +47,19 @@
 		22B375688918831804DFA3ED /* Pods-iTunesAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAlbums.debug.xcconfig"; path = "Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums.debug.xcconfig"; sourceTree = "<group>"; };
 		363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE60DB7625781CAC0085083D /* AlbumsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsListViewController.xib; sourceTree = "<group>"; };
+		EE60DBCC257928B20085083D /* AlbumInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewController.swift; sourceTree = "<group>"; };
+		EE60DBCD257928B20085083D /* AlbumInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumInfoViewController.xib; sourceTree = "<group>"; };
+		EE60DBD225792AE40085083D /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		EE60DBD625792CC90085083D /* AlbumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModel.swift; sourceTree = "<group>"; };
+		EE60DBD9257930010085083D /* AlbumInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE60DBDA257930010085083D /* AlbumInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE60DBE1257932A20085083D /* AlbumInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoCellViewModel.swift; sourceTree = "<group>"; };
+		EE60DBE5257938750085083D /* SongInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE60DBE6257938750085083D /* SongInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongInfoCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE60DBEA257938870085083D /* SongInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoCellViewModel.swift; sourceTree = "<group>"; };
+		EE60DBED25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCopyrightCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE60DBEE25793BF20085083D /* AlbumCopyrightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCopyrightCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE60DBF225793DB50085083D /* AlbumCopyrightCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCopyrightCellViewModel.swift; sourceTree = "<group>"; };
 		EEAA34562577CEF1002DAD06 /* iTunesAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34592577CEF1002DAD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +111,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE60DBC8257927090085083D /* AlbumInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBC9257927790085083D /* View */,
+				EE60DBCA257927800085083D /* ViewModel */,
+				EE60DBCB257927890085083D /* Cells */,
+			);
+			path = AlbumInfoViewController;
+			sourceTree = "<group>";
+		};
+		EE60DBC9257927790085083D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBCC257928B20085083D /* AlbumInfoViewController.swift */,
+				EE60DBCD257928B20085083D /* AlbumInfoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE60DBCA257927800085083D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBD625792CC90085083D /* AlbumInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE60DBCB257927890085083D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBDE257930360085083D /* Views */,
+				EE60DBDF257930430085083D /* ViewModels */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EE60DBD125792A4C0085083D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEAA34BF2577F779002DAD06 /* Album.swift */,
+				EE60DBD225792AE40085083D /* Song.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE60DBDE257930360085083D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBD9257930010085083D /* AlbumInfoCollectionViewCell.swift */,
+				EE60DBDA257930010085083D /* AlbumInfoCollectionViewCell.xib */,
+				EE60DBE5257938750085083D /* SongInfoCollectionViewCell.swift */,
+				EE60DBE6257938750085083D /* SongInfoCollectionViewCell.xib */,
+				EE60DBED25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift */,
+				EE60DBEE25793BF20085083D /* AlbumCopyrightCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EE60DBDF257930430085083D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EE60DBE1257932A20085083D /* AlbumInfoCellViewModel.swift */,
+				EE60DBEA257938870085083D /* SongInfoCellViewModel.swift */,
+				EE60DBF225793DB50085083D /* AlbumCopyrightCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		EEAA344D2577CEF1002DAD06 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAA346F2577D2A6002DAD06 /* AlbumsListViewController */,
+				EE60DBC8257927090085083D /* AlbumInfoViewController */,
 				EEAA34AF2577EE58002DAD06 /* Services */,
 				EEAA347F2577D58D002DAD06 /* Helpers */,
 				EEAA34942577E009002DAD06 /* Extensions */,
@@ -211,9 +306,9 @@
 		EEAA34B02577EE99002DAD06 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EE60DBD125792A4C0085083D /* Model */,
 				EEAA34B12577EEAE002DAD06 /* NetworkClient.swift */,
 				EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */,
-				EEAA34BF2577F779002DAD06 /* Album.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -277,8 +372,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE60DBF025793BF20085083D /* AlbumCopyrightCollectionViewCell.xib in Resources */,
+				EE60DBCF257928B30085083D /* AlbumInfoViewController.xib in Resources */,
+				EE60DBE8257938750085083D /* SongInfoCollectionViewCell.xib in Resources */,
 				EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */,
 				EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */,
+				EE60DBDC257930010085083D /* AlbumInfoCollectionViewCell.xib in Resources */,
 				EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */,
 				EE60DB7825781CAC0085083D /* AlbumsListViewController.xib in Resources */,
 				EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */,
@@ -338,13 +437,22 @@
 				EEAA349B2577E592002DAD06 /* AlbumCollectionViewCell.swift in Sources */,
 				EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */,
 				EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */,
+				EE60DBF325793DB50085083D /* AlbumCopyrightCellViewModel.swift in Sources */,
 				EEAA34B22577EEAE002DAD06 /* NetworkClient.swift in Sources */,
+				EE60DBD725792CC90085083D /* AlbumInfoViewModel.swift in Sources */,
+				EE60DBDB257930010085083D /* AlbumInfoCollectionViewCell.swift in Sources */,
+				EE60DBE2257932A20085083D /* AlbumInfoCellViewModel.swift in Sources */,
 				EEAA34C02577F779002DAD06 /* Album.swift in Sources */,
 				EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */,
 				EEAA34B62577EF14002DAD06 /* BaseNetworkService.swift in Sources */,
 				EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */,
+				EE60DBEF25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift in Sources */,
+				EE60DBCE257928B30085083D /* AlbumInfoViewController.swift in Sources */,
+				EE60DBEB257938870085083D /* SongInfoCellViewModel.swift in Sources */,
 				EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */,
+				EE60DBE7257938750085083D /* SongInfoCollectionViewCell.swift in Sources */,
 				EEAA34962577E028002DAD06 /* UICollectionView+registerCell.swift in Sources */,
+				EE60DBD325792AE40085083D /* Song.swift in Sources */,
 				EEAA34912577DF27002DAD06 /* AlbumsListViewModel.swift in Sources */,
 				EEAA34A62577E938002DAD06 /* AlbumCellViewModel.swift in Sources */,
 				EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */,

@@ -20,12 +20,14 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.title = "Albums"
+		
 		self.collectionView.dataSource = self
 		self.collectionView.delegate = self
 		
-		self.setupSearchBar()
-		
 		self.collectionView.collectionViewLayout = createLayout()
+		
+		self.setupSearchBar()
     }
 	
 	override func setupViewModel() {
@@ -54,7 +56,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 			)
 			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
 			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 2)
-			group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+			group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 20, trailing: 20)
 			group.interItemSpacing = NSCollectionLayoutSpacing.fixed(16.0)
 			let section = NSCollectionLayoutSection(group: group)
 			section.interGroupSpacing = 16
@@ -65,7 +67,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	
 	private func setupSearchBar() {
 		self.searchController = UISearchController(searchResultsController: nil)
-		searchController.searchResultsUpdater = self
+		self.searchController.searchResultsUpdater = self
 		self.searchController.searchBar.placeholder = "Search albums"
 		self.searchController.searchBar.tintColor = .systemIndigo
 		self.searchController.obscuresBackgroundDuringPresentation = false

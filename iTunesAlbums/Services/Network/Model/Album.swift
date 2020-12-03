@@ -27,4 +27,5 @@ struct Album: Decodable {
 	let copyright: String?
 	let releaseDate: String
 	let primaryGenreName: String
+	let trackCount: Int
 }

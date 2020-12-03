@@ -47,7 +47,7 @@ final class AlbumsListViewModelImpl: ViewModel {
 			guard let self = self else { return }
 			switch $0 {
 				case let .success(albums):
-					self.searchingAlbums = albums.results
+					self.searchingAlbums = self.sortAlbumsByAlphabet(albums: albums.results)
 				case let .failure(error):
 					self.stateHandler?(.error(errorString: error.stringError))
 			}
@@ -59,6 +59,12 @@ final class AlbumsListViewModelImpl: ViewModel {
 		switch action {
 			case .searchTextDidChanged(let text):
 				self.getAlbums(searchText: text)
+		}
+	}
+
+	private func sortAlbumsByAlphabet(albums: [Album]) -> [Album] {
+		albums.sorted {
+			return ($0.collectionName.localizedCaseInsensitiveCompare($1.collectionName) == .orderedAscending)
 		}
 	}
 }

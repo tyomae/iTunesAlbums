@@ -12,18 +12,31 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AlbumsListViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ma5-Lt-AjC"/>
+                    <connections>
+                        <segue destination="gBL-ca-yNh" kind="show" id="p6a-BD-7Nq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960.86956521739137" y="93.75"/>
+            <point key="canvasLocation" x="912" y="94"/>
+        </scene>
+        <!--Album Info View Controller-->
+        <scene sceneID="dhR-BY-2T5">
+            <objects>
+                <viewController id="gBL-ca-yNh" customClass="AlbumInfoViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2qc-9n-pYH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIM-RK-gqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wRX-cI-dmg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlQ-bd-5O4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LtB-pb-C2K">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="LtB-pb-C2K">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
