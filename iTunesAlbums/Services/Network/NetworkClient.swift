@@ -17,7 +17,7 @@ enum APIError: Error {
 		case.noInternet:
 			return "No network access 😩"
 		case.internalError:
-			return "Server error 😳"
+			return "error 😳"
 		}
 	}
 }

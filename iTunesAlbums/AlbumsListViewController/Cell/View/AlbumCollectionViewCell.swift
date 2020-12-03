@@ -11,7 +11,12 @@ import SDWebImage
 
 class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
 
-	@IBOutlet weak var albumImageView: UIImageView!
+	@IBOutlet weak var albumImageView: UIImageView! {
+		didSet {
+			self.albumImageView.layer.cornerRadius = 4
+			self.albumImageView.clipsToBounds = true
+		}
+	}
 	@IBOutlet weak var albumTitleLabel: UILabel!
 	@IBOutlet weak var artistLabel: UILabel!
 	

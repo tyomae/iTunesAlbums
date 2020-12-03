@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5771F0A9ABBCA90F11C28FD7 /* Pods_iTunesAlbums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */; };
+		EE60DB7825781CAC0085083D /* AlbumsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DB7625781CAC0085083D /* AlbumsListViewController.xib */; };
 		EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34592577CEF1002DAD06 /* AppDelegate.swift */; };
 		EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */; };
 		EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA345F2577CEF1002DAD06 /* Main.storyboard */; };
 		EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEAA34622577CEF4002DAD06 /* Assets.xcassets */; };
 		EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA34642577CEF4002DAD06 /* LaunchScreen.storyboard */; };
 		EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */; };
-		EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */; };
 		EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34802577D5AF002DAD06 /* BaseViewController.swift */; };
 		EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34852577D5E5002DAD06 /* ViewModel.swift */; };
 		EEAA34912577DF27002DAD06 /* AlbumsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34902577DF27002DAD06 /* AlbumsListViewModel.swift */; };
@@ -33,6 +33,7 @@
 		0DB2C106E584FEE6E63E71E8 /* Pods-iTunesAlbums.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAlbums.release.xcconfig"; path = "Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums.release.xcconfig"; sourceTree = "<group>"; };
 		22B375688918831804DFA3ED /* Pods-iTunesAlbums.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesAlbums.debug.xcconfig"; path = "Target Support Files/Pods-iTunesAlbums/Pods-iTunesAlbums.debug.xcconfig"; sourceTree = "<group>"; };
 		363835923FE5809620435A51 /* Pods_iTunesAlbums.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesAlbums.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE60DB7625781CAC0085083D /* AlbumsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsListViewController.xib; sourceTree = "<group>"; };
 		EEAA34562577CEF1002DAD06 /* iTunesAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34592577CEF1002DAD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		EEAA34652577CEF4002DAD06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEAA34672577CEF5002DAD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
-		EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsListViewController.xib; sourceTree = "<group>"; };
 		EEAA34802577D5AF002DAD06 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EEAA34852577D5E5002DAD06 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EEAA34902577DF27002DAD06 /* AlbumsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewModel.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EEAA34792577D3A9002DAD06 /* AlbumsListViewController.swift */,
-				EEAA347A2577D3A9002DAD06 /* AlbumsListViewController.xib */,
+				EE60DB7625781CAC0085083D /* AlbumsListViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 				EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */,
 				EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */,
 				EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */,
-				EEAA347C2577D3A9002DAD06 /* AlbumsListViewController.xib in Resources */,
+				EE60DB7825781CAC0085083D /* AlbumsListViewController.xib in Resources */,
 				EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

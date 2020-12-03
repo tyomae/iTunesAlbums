@@ -8,10 +8,18 @@ import Foundation
 
 struct AlbumsResult: Decodable {
 	let results: [Album]
+	
+	enum CodingKeys: String, CodingKey {
+		case results = "results"
+	}
+	
+	init(from decoder: Decoder) throws {
+		let values = try decoder.container(keyedBy: CodingKeys.self)
+		self.results = try values.decode([Album].self, forKey: .results)
+	}
 }
 
 struct Album: Decodable {
-	
 	let collectionName: String
 	let artistName: String
 	let artworkUrl100: String

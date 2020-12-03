@@ -26,13 +26,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Album title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r34-s7-3EF">
-                        <rect key="frame" x="0.0" y="130" width="120" height="22"/>
+                        <rect key="frame" x="0.0" y="124" width="120" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCp-wT-9qb">
-                        <rect key="frame" x="0.0" y="162" width="120" height="82"/>
+                        <rect key="frame" x="0.0" y="146" width="120" height="98"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -42,11 +42,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="r34-s7-3EF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="08S-f9-Dg5"/>
-                <constraint firstItem="yCp-wT-9qb" firstAttribute="top" secondItem="r34-s7-3EF" secondAttribute="bottom" constant="10" id="6C7-Bc-gp5"/>
+                <constraint firstItem="yCp-wT-9qb" firstAttribute="top" secondItem="r34-s7-3EF" secondAttribute="bottom" id="6C7-Bc-gp5"/>
                 <constraint firstAttribute="trailing" secondItem="r34-s7-3EF" secondAttribute="trailing" id="810-uA-Ogx"/>
                 <constraint firstAttribute="trailing" secondItem="yCp-wT-9qb" secondAttribute="trailing" id="Rs6-ES-G8S"/>
                 <constraint firstAttribute="bottom" secondItem="yCp-wT-9qb" secondAttribute="bottom" id="WRg-sg-4FE"/>
-                <constraint firstItem="r34-s7-3EF" firstAttribute="top" secondItem="JkZ-Lo-7vq" secondAttribute="bottom" constant="10" id="ZvZ-8L-hKg"/>
+                <constraint firstItem="r34-s7-3EF" firstAttribute="top" secondItem="JkZ-Lo-7vq" secondAttribute="bottom" constant="4" id="ZvZ-8L-hKg"/>
                 <constraint firstItem="JkZ-Lo-7vq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nco-2d-pzJ"/>
                 <constraint firstItem="yCp-wT-9qb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="os4-SI-HGU"/>
                 <constraint firstAttribute="trailing" secondItem="JkZ-Lo-7vq" secondAttribute="trailing" id="pb8-y1-0AD"/>
