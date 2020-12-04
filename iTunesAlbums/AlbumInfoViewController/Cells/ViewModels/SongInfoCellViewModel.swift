@@ -12,7 +12,7 @@ protocol SongInfoCellViewModel {
 	var songTitle: String { get }
 }
 
-final class SongInfoCellViewModelImpl: SongInfoCellViewModel {
+final class SongInfoCellViewModelImpl: SongInfoCellViewModel, CellViewModel {
 	let songCount: String
 	let songTitle: String
 

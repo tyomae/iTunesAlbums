@@ -12,12 +12,12 @@ protocol AlbumCopyrightCellViewModel {
 	var copyright: String { get }
 }
 
-final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel {
+final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel, CellViewModel {
 	let songCount: String
 	let copyright: String
 
 	init(trackCount: Int, copyright: String){
-		self.songCount = String(trackCount)
+		self.songCount = "\(trackCount) songs"
 		self.copyright = copyright
 	}
 }

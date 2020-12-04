@@ -22,6 +22,7 @@
 		EE60DBEF25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBED25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift */; };
 		EE60DBF025793BF20085083D /* AlbumCopyrightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE60DBEE25793BF20085083D /* AlbumCopyrightCollectionViewCell.xib */; };
 		EE60DBF325793DB50085083D /* AlbumCopyrightCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBF225793DB50085083D /* AlbumCopyrightCellViewModel.swift */; };
+		EE60DBF625794BC30085083D /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60DBF525794BC30085083D /* CellViewModel.swift */; };
 		EEAA345A2577CEF1002DAD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34592577CEF1002DAD06 /* AppDelegate.swift */; };
 		EEAA345C2577CEF1002DAD06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */; };
 		EEAA34612577CEF1002DAD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEAA345F2577CEF1002DAD06 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		EE60DBED25793BF20085083D /* AlbumCopyrightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCopyrightCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE60DBEE25793BF20085083D /* AlbumCopyrightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCopyrightCollectionViewCell.xib; sourceTree = "<group>"; };
 		EE60DBF225793DB50085083D /* AlbumCopyrightCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCopyrightCellViewModel.swift; sourceTree = "<group>"; };
+		EE60DBF525794BC30085083D /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
 		EEAA34562577CEF1002DAD06 /* iTunesAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAA34592577CEF1002DAD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEAA345B2577CEF1002DAD06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				EEAA34802577D5AF002DAD06 /* BaseViewController.swift */,
 				EEAA34852577D5E5002DAD06 /* ViewModel.swift */,
 				EEAA349F2577E8C3002DAD06 /* ConfigurableView.swift */,
+				EE60DBF525794BC30085083D /* CellViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				EE60DBDB257930010085083D /* AlbumInfoCollectionViewCell.swift in Sources */,
 				EE60DBE2257932A20085083D /* AlbumInfoCellViewModel.swift in Sources */,
 				EEAA34C02577F779002DAD06 /* Album.swift in Sources */,
+				EE60DBF625794BC30085083D /* CellViewModel.swift in Sources */,
 				EEAA34A02577E8C3002DAD06 /* ConfigurableView.swift in Sources */,
 				EEAA34B62577EF14002DAD06 /* BaseNetworkService.swift in Sources */,
 				EEAA34812577D5AF002DAD06 /* BaseViewController.swift in Sources */,

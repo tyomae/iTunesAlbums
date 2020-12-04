@@ -9,13 +9,78 @@ import Foundation
 
 final class AlbumInfoViewModelImpl: ViewModel {
 	
+	struct Section {
+		enum SectionType {
+			case albumInfo
+			case track
+			case copyright
+		}
+		let cellViewModels: [CellViewModel]
+		let type: SectionType
+	}
+	
+	private let albumService = AlbumServiceServiceImpl()
+	private var album: Album
+	private var songs = [Song]()
+	private var songsCellViewModels = [SongInfoCellViewModelImpl]()
+	var sections = [Section]()
 	var stateHandler: ((State) -> Void)?
 	
 	enum State {
 		case dataLoaded
+		case error(errorString: String)
 	}
 	
-	init() {
-		
+	init(album: Album) {
+		self.album = album
+		self.getSongs()
+		self.stateHandler?(.dataLoaded)
+	}
+	
+	private func getSongs() {
+		//		self.stateHandler?(.loading)
+		self.albumService.getCurrentAlbum(albumId: self.album.collectionId) { [weak self] in
+			guard let self = self else { return }
+			switch $0 {
+				case let .success(songs):
+					self.songs = songs.results
+					self.updateSongsViewModels()
+					self.updateSections()
+					if self.songs.isEmpty == false {
+						self.stateHandler?(.dataLoaded)
+					}
+				case let .failure(error):
+					self.stateHandler?(.error(errorString: error.stringError))
+			}
+		}
+		self.stateHandler?(.dataLoaded)
+	}
+	
+	private func updateSongsViewModels() {
+		self.songsCellViewModels.removeAll()
+		for song in self.songs {
+			if let songTitle = song.trackName,
+			   let songNumber = song.trackNumber {
+				self.songsCellViewModels.append(SongInfoCellViewModelImpl(songNumber: songNumber,
+																		  songTitle: songTitle))
+			}
+		}
+	}
+	
+	private func updateSections() {
+		self.sections = [Section(cellViewModels: [AlbumInfoCellViewModelImpl(
+													albumImageUrl: self.album.artworkUrl100,
+													albumTitle: self.album.collectionName,
+													artistTitle: self.album.artistName,
+													albumGenre: self.album.primaryGenreName,
+													dateRelease: self.album.releaseDate)],
+								 type: .albumInfo),
+						 Section(cellViewModels: songsCellViewModels,
+								 type: .track),
+						 Section(cellViewModels: [AlbumCopyrightCellViewModelImpl(
+													trackCount: self.album.trackCount,
+													copyright: self.album.copyright ?? "")],
+								 type: .copyright)
+		]
 	}
 }

@@ -13,7 +13,7 @@ class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
 
 	@IBOutlet weak var albumImageView: UIImageView! {
 		didSet {
-			self.albumImageView.layer.cornerRadius = 4
+			self.albumImageView.layer.cornerRadius = 6
 			self.albumImageView.clipsToBounds = true
 		}
 	}

@@ -15,7 +15,7 @@ protocol AlbumInfoCellViewModel {
 	var dateRelease: String { get }
 }
 
-final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel {
+final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel, CellViewModel {
 	let albumImageUrl: URL?
 	let albumTitle: String
 	let artistName: String
@@ -32,7 +32,7 @@ final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel {
 		self.albumImageUrl = imageUrl
 		self.albumTitle = albumTitle
 		self.artistName = artistTitle
-		self.albumGenre = albumGenre
-		self.dateRelease = dateRelease
+		self.albumGenre = albumGenre.uppercased()
+		self.dateRelease = String(dateRelease.prefix(4)) //get only release year
 	}
 }
