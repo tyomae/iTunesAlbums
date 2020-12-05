@@ -29,18 +29,29 @@ final class AlbumInfoViewModelImpl: ViewModel {
 	enum State {
 		case dataLoaded
 		case error(errorString: String)
+		case loading
+	}
+	
+	enum Action {
+		case viewDidLoad
 	}
 	
 	init(album: Album) {
 		self.album = album
-		self.getSongs()
-		self.stateHandler?(.dataLoaded)
+	}
+	
+	func process(action: Action) {
+		switch action {
+			case .viewDidLoad:
+				self.getSongs()
+		}
 	}
 	
 	private func getSongs() {
-		//		self.stateHandler?(.loading)
+		self.stateHandler?(.loading)
 		self.albumService.getCurrentAlbum(albumId: self.album.collectionId) { [weak self] in
 			guard let self = self else { return }
+			
 			switch $0 {
 				case let .success(songs):
 					self.songs = songs.results
@@ -53,7 +64,6 @@ final class AlbumInfoViewModelImpl: ViewModel {
 					self.stateHandler?(.error(errorString: error.stringError))
 			}
 		}
-		self.stateHandler?(.dataLoaded)
 	}
 	
 	private func updateSongsViewModels() {

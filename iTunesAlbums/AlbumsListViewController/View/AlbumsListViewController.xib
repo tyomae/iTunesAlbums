@@ -14,6 +14,7 @@
                 <outlet property="backgroundImage" destination="WTO-gA-8Td" id="nD3-Xu-x3H"/>
                 <outlet property="collectionView" destination="TTa-z7-9e4" id="KR0-wg-8uJ"/>
                 <outlet property="errorLabel" destination="HbF-c4-MQg" id="YsM-IL-Z1W"/>
+                <outlet property="retryButton" destination="DN2-R5-KVd" id="f9y-kz-2cD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,15 +33,33 @@
                         <inset key="sectionInset" minX="20" minY="16" maxX="20" maxY="16"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-c4-MQg">
-                    <rect key="frame" x="10" y="439.5" width="394" height="27.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wave" translatesAutoresizingMaskIntoConstraints="NO" id="WTO-gA-8Td">
                     <rect key="frame" x="82" y="353" width="250" height="200"/>
                 </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KNa-QO-pRT">
+                    <rect key="frame" x="157" y="416" width="100" height="69.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-c4-MQg">
+                            <rect key="frame" x="26" y="0.0" width="48" height="27.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DN2-R5-KVd">
+                            <rect key="frame" x="0.0" y="35.5" width="100" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="YRu-bj-e10"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Retry">
+                                <color key="titleColor" systemColor="systemIndigoColor"/>
+                            </state>
+                            <connections>
+                                <action selector="retryButtonTouched:" destination="-1" eventType="touchUpInside" id="kQh-4q-Zx4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,12 +67,11 @@
                 <constraint firstItem="TTa-z7-9e4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3lJ-lr-SRd"/>
                 <constraint firstItem="WTO-gA-8Td" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="AIT-5n-BUU"/>
                 <constraint firstItem="WTO-gA-8Td" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerXWithinMargins" id="QIQ-1E-Kwa"/>
-                <constraint firstItem="HbF-c4-MQg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="W6u-Cc-1ck"/>
+                <constraint firstItem="KNa-QO-pRT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bKR-s5-RbU"/>
                 <constraint firstAttribute="bottom" secondItem="TTa-z7-9e4" secondAttribute="bottom" id="baY-yv-byl"/>
                 <constraint firstItem="TTa-z7-9e4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="f79-ip-0Pr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TTa-z7-9e4" secondAttribute="trailing" id="gp4-MO-huu"/>
-                <constraint firstItem="HbF-c4-MQg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="pFg-wl-sVw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HbF-c4-MQg" secondAttribute="trailing" constant="10" id="tX3-nm-mTU"/>
+                <constraint firstItem="KNa-QO-pRT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-2.25" id="twp-Io-SPT"/>
             </constraints>
             <point key="canvasLocation" x="-184.05797101449278" y="84.375"/>
         </view>
@@ -62,6 +80,9 @@
         <image name="wave" width="250" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

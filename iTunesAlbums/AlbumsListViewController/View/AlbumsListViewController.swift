@@ -22,7 +22,15 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 			self.errorLabel.isHidden = true
 		}
 	}
-	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var retryButton: UIButton! {
+		didSet {
+			self.retryButton.isHidden = true
+			self.retryButton.setTitle("Retry", for: .normal)
+			self.retryButton.layer.cornerRadius = 8
+			self.retryButton.layer.borderWidth = 1
+			self.retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
+		}
+	}
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,22 +52,26 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	override func processViewModel(state: AlbumsListViewModelImpl.State) {
 		switch state {
 			case .dataLoaded:
-//				self.activityIndicator.stopAnimating()
 				self.errorLabel.isHidden = true
 				self.collectionView.isHidden = false
+				self.retryButton.isHidden = true
 				self.collectionView.reloadData()
 				self.backgroundImage.isHidden = true
 			case .error(let error):
-//				self.activityIndicator.startAnimating()
 				self.errorLabel.text = error
 				self.errorLabel.isHidden = false
 				self.collectionView.isHidden = true
+				self.retryButton.isHidden = false
 			case .searchBarEmpty:
-//				self.activityIndicator.stopAnimating()
 				self.errorLabel.isHidden = true
 				self.collectionView.isHidden = true
 				self.backgroundImage.isHidden = false
+				self.retryButton.isHidden = true
 		}
+	}
+	
+	@IBAction func retryButtonTouched(_ sender: Any) {
+		self.viewModel.getAlbums(searchText: searchController.searchBar.text ?? "")
 	}
 	
 	private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -83,15 +95,22 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	private func setupSearchBar() {
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
-//		self.searchController.searchBar.placeholder = "Search albums"
 		searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search album", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemIndigo])
 		self.searchController.obscuresBackgroundDuringPresentation = false
 		self.navigationItem.hidesSearchBarWhenScrolling = false
 		self.navigationItem.searchController = searchController
-//		self.navigationItem.backBarButtonItem?.title = R.string.localizable.countries()
 		
 		self.definesPresentationContext = true
 	}
+	
+	private func openAlbumInfoVC(with album: Album) {
+		let vc = AlbumInfoViewController()
+		let viewModel = AlbumInfoViewModelImpl(album: album)
+		vc.viewModel = viewModel
+		self.navigationController?.pushViewController(vc, animated: true)
+	}
+	
+	// MARK: - UICollectionViewDelegate & UICollectionViewDataSource
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return self.viewModel.cellViewModels.count
@@ -109,14 +128,9 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 		self.openAlbumInfoVC(with: currentAlbum)
 	}
 	
+	// MARK: - UISearchResultsUpdating
+	
 	func updateSearchResults(for searchController: UISearchController) {
 		self.viewModel.process(action: .searchTextDidChanged(text: searchController.searchBar.text ?? ""))
-	}
-	
-	private func openAlbumInfoVC(with album: Album) {
-		let vc = AlbumInfoViewController()
-		let viewModel = AlbumInfoViewModelImpl(album: album)
-		vc.viewModel = viewModel
-		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

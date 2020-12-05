@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AlbumsListViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ma5-Lt-AjC"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Ma5-Lt-AjC"/>
                     <connections>
                         <segue destination="gBL-ca-yNh" kind="show" identifier="segue" id="p6a-BD-7Nq"/>
                     </connections>
@@ -25,7 +25,7 @@
         <scene sceneID="dhR-BY-2T5">
             <objects>
                 <viewController id="gBL-ca-yNh" customClass="AlbumInfoViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="2qc-9n-pYH"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2qc-9n-pYH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIM-RK-gqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,8 +36,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlQ-bd-5O4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="LtB-pb-C2K">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LtB-pb-C2K">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemIndigoColor"/>
                     </navigationBar>

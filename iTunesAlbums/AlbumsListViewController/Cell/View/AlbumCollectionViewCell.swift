@@ -10,7 +10,7 @@ import SDWebImage
 
 
 class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
-
+	
 	@IBOutlet weak var albumImageView: UIImageView! {
 		didSet {
 			self.albumImageView.layer.cornerRadius = 6
@@ -21,7 +21,12 @@ class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
 	@IBOutlet weak var artistLabel: UILabel!
 	
 	func configure(with model: AlbumCellViewModel) {
-		self.albumImageView.sd_setImage(with: model.albumImageUrl, completed: nil)
+		albumImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+		albumImageView.sd_setImage(with: model.albumImageUrl) { [weak self] (image, _, _, _) in
+			if image == nil {
+				self?.albumImageView.image = #imageLiteral(resourceName: "noPhoto")
+			}
+		}
 		self.albumTitleLabel.text  = model.albumTitle
 		self.artistLabel.text  =  model.artistTitle
 	}

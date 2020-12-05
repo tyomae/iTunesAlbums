@@ -16,8 +16,6 @@ class BaseViewController<V: ViewModel>: UIViewController {
 		self.setupViewModel()
 		self.bindViewModelStateHandler()
 		super.viewDidLoad()
-
-//		self.hideNavigationBarSeparator()
 	}
 
 	// MARK: - Public API
@@ -33,9 +31,4 @@ class BaseViewController<V: ViewModel>: UIViewController {
 			self?.processViewModel(state: state)
 		}
 	}
-	
-//	private func hideNavigationBarSeparator() {
-//		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-//		navigationController?.navigationBar.shadowImage = UIImage()
-//	}
 }

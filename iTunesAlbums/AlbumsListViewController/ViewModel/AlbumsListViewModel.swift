@@ -25,7 +25,14 @@ final class AlbumsListViewModelImpl: ViewModel {
 	}
 	
 	init() {
-		self.updateCellViewModels()
+		self.getAlbums(searchText: "")
+	}
+	
+	func process(action: Action) {
+		switch action {
+			case .searchTextDidChanged(let text):
+				self.getAlbums(searchText: text)
+		}
 	}
 	
 	private func updateCellViewModels() {
@@ -39,14 +46,13 @@ final class AlbumsListViewModelImpl: ViewModel {
 		self.stateHandler?(.dataLoaded)
 	}
 	
-	private func getAlbums(searchText: String) {
+	 func getAlbums(searchText: String) {
 		if searchText.isEmpty {
 			self.cellViewModels.removeAll()
 			self.stateHandler?(.searchBarEmpty)
-//			self.stateHandler?(.dataLoaded)
 			return
 		}
-		self.albumService.getAlbums(searchRequest: searchText) { [weak self] in
+		self.albumService.getAlbums(searchText: searchText) { [weak self] in
 			guard let self = self else { return }
 			switch $0 {
 				case let .success(albums):
@@ -56,13 +62,6 @@ final class AlbumsListViewModelImpl: ViewModel {
 			}
 		}
 		self.updateCellViewModels()
-	}
-	
-	func process(action: Action) {
-		switch action {
-			case .searchTextDidChanged(let text):
-				self.getAlbums(searchText: text)
-		}
 	}
 	
 	private func sortAlbumsByAlphabet(albums: [Album]) -> [Album] {

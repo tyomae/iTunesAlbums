@@ -5,8 +5,10 @@
 //  Created by Артем  Емельянов  on 02.12.2020.
 //
 
+import Foundation
+
 protocol AlbumService {
-	func getAlbums(searchRequest: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void))
+	func getAlbums(searchText: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void))
 	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void))
 }
 
@@ -14,21 +16,26 @@ class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
 	
 	private enum Endpoint {
 		case currentAlbum(albumId: Int)
-		case albumsList(searchRequest: String)
+		case albumsList(searchText: String)
 		
 		var stringEndPoint: String {
 			switch self {
 				case .currentAlbum(let albumId):
 					return "lookup/?id=\(albumId)&entity=song"
-				case .albumsList(let searchRequest):
-					return "search/media=music&entity=album&term=\(searchRequest)"
+				case .albumsList(let searchText):
+					return "search/media=music&entity=album&term=\(searchText)"
 			}
 		}
 	}
 	
-	func getAlbums(searchRequest: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void)) {
-		let searchRequestWitoutSpace = searchRequest.replacingOccurrences(of: " ", with: "")
-		request(endpoint: Endpoint.albumsList(searchRequest: searchRequestWitoutSpace).stringEndPoint, method: .GET, completion: completion)
+	private var lastGetAlbumsRequest: URLSessionDataTask?
+	
+	func getAlbums(searchText: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void)) {
+		guard let searchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+			return
+		}
+		lastGetAlbumsRequest?.cancel()
+		lastGetAlbumsRequest = request(endpoint: Endpoint.albumsList(searchText: searchText).stringEndPoint, method: .GET, completion: completion)
 	}
 	
 	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void)) {

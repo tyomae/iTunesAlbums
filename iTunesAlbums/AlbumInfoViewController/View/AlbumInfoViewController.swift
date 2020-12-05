@@ -16,6 +16,8 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 												   AlbumCopyrightCollectionViewCell.self])
 		}
 	}
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var errorLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,18 +26,30 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 		
 		self.collectionView.dataSource = self
 		self.collectionView.delegate = self
+		
+		self.viewModel.process(action: .viewDidLoad)
 	}
 	
 	override func processViewModel(state: AlbumInfoViewModelImpl.State) {
 		switch state {
+			case .loading:
+				self.activityIndicator.startAnimating()
+				self.errorLabel.isHidden = false
+				self.errorLabel.text = "Loading..."
+//				self.retryButton.isHidden = true
+				self.collectionView.isHidden = true
 			case .dataLoaded:
+				self.activityIndicator.stopAnimating()
+//				self.retryButton.isHidden = true
+				self.errorLabel.isHidden = true
+				self.collectionView.isHidden = false
 				self.collectionView.reloadData()
 			case .error(let error):
 				print(error)
-//				self.activityIndicator.stopAnimating()
+				self.activityIndicator.stopAnimating()
 //				self.retryButton.isHidden = false
-//				self.errorLabel.text = error
-//				self.errorLabel.isHidden = false
+				self.errorLabel.text = error
+				self.errorLabel.isHidden = false
 				self.collectionView.isHidden = true
 		}
 	}
@@ -72,7 +86,7 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 			var estimatedHeight: CGFloat
 			switch self.viewModel.sections[section].type {
 				case .albumInfo:
-					estimatedHeight = CGFloat(150)
+					estimatedHeight = CGFloat(120)
 				case .track:
 					estimatedHeight = CGFloat(33)
 				case .copyright:
@@ -80,15 +94,13 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 			}
 			let layoutSize = NSCollectionLayoutSize(
 				widthDimension: .fractionalWidth(1.0),
-				heightDimension: .absolute(estimatedHeight)
+				heightDimension: .estimated(estimatedHeight)
 			)
 			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
 			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 1)
 			group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
 			let section = NSCollectionLayoutSection(group: group)
 			section.interGroupSpacing = 10
-			section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0)
-
 			return section
 		}
 	}

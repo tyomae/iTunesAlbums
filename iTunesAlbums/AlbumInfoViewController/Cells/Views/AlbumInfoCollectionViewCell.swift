@@ -22,7 +22,13 @@ class AlbumInfoCollectionViewCell: UICollectionViewCell, ConfigurableView {
 	
 	func configure(with model: AlbumInfoCellViewModel) {
 		self.albumTitleLabel.text = model.albumTitle
-		self.albumImageView.sd_setImage(with: model.albumImageUrl, completed: nil)
+		//TODO: проверить можно ли одинаковый код вынести за пределы в отдельный файл
+		albumImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+		albumImageView.sd_setImage(with: model.albumImageUrl) { [weak self] (image, _, _, _) in
+			if image == nil {
+				self?.albumImageView.image = #imageLiteral(resourceName: "noPhoto")
+			}
+		}
 		self.artistName.text = model.artistName
 		self.albumGenreLabel.text = model.albumGenre
 		self.dateReleaseLabel.text = model.dateRelease
