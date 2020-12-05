@@ -15,16 +15,17 @@ final class AlbumInfoViewModelImpl: ViewModel {
 			case track
 			case copyright
 		}
+		
 		let cellViewModels: [CellViewModel]
 		let type: SectionType
 	}
 	
+	var sections = [Section]()
+	var stateHandler: ((State) -> Void)?
 	private let albumService = AlbumServiceServiceImpl()
 	private var album: Album
 	private var songs = [Song]()
 	private var songsCellViewModels = [SongInfoCellViewModelImpl]()
-	var sections = [Section]()
-	var stateHandler: ((State) -> Void)?
 	
 	enum State {
 		case dataLoaded

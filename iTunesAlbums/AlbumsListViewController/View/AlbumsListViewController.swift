@@ -25,7 +25,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	@IBOutlet weak var retryButton: UIButton! {
 		didSet {
 			self.retryButton.isHidden = true
-			self.retryButton.setTitle("Retry", for: .normal)
+			self.retryButton.setTitle(R.string.localizable.retry(), for: .normal)
 			self.retryButton.layer.cornerRadius = 8
 			self.retryButton.layer.borderWidth = 1
 			self.retryButton.layer.borderColor = UIColor.systemIndigo.cgColor
@@ -35,7 +35,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.title = "Albums"
+		self.title = R.string.localizable.albums()
 		
 		self.collectionView.dataSource = self
 		self.collectionView.delegate = self
@@ -95,7 +95,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	private func setupSearchBar() {
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
-		searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search album", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemIndigo])
+		searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.search_albums(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemIndigo])
 		self.searchController.obscuresBackgroundDuringPresentation = false
 		self.navigationItem.hidesSearchBarWhenScrolling = false
 		self.navigationItem.searchController = searchController

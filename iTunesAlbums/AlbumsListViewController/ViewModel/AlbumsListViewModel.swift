@@ -46,7 +46,7 @@ final class AlbumsListViewModelImpl: ViewModel {
 		self.stateHandler?(.dataLoaded)
 	}
 	
-	 func getAlbums(searchText: String) {
+	func getAlbums(searchText: String) {
 		if searchText.isEmpty {
 			self.cellViewModels.removeAll()
 			self.stateHandler?(.searchBarEmpty)

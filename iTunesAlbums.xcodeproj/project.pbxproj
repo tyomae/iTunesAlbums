@@ -41,6 +41,8 @@
 		EEAA34B62577EF14002DAD06 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */; };
 		EEAA34BC2577F038002DAD06 /* AlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34BB2577F038002DAD06 /* AlbumService.swift */; };
 		EEAA34C02577F779002DAD06 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA34BF2577F779002DAD06 /* Album.swift */; };
+		EED51E0C257BF08C0063E0E3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED51E0B257BF08C0063E0E3 /* R.generated.swift */; };
+		EED51E13257BF1D30063E0E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EED51E12257BF1D30063E0E3 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		EEAA34B52577EF14002DAD06 /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
 		EEAA34BB2577F038002DAD06 /* AlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumService.swift; sourceTree = "<group>"; };
 		EEAA34BF2577F779002DAD06 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		EED51E0B257BF08C0063E0E3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EED51E12257BF1D30063E0E3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +254,9 @@
 				EEAA345F2577CEF1002DAD06 /* Main.storyboard */,
 				EEAA34622577CEF4002DAD06 /* Assets.xcassets */,
 				EEAA34642577CEF4002DAD06 /* LaunchScreen.storyboard */,
+				EED51E0B257BF08C0063E0E3 /* R.generated.swift */,
 				EEAA34672577CEF5002DAD06 /* Info.plist */,
+				EED51E12257BF1D30063E0E3 /* Localizable.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			buildConfigurationList = EEAA346A2577CEF5002DAD06 /* Build configuration list for PBXNativeTarget "iTunesAlbums" */;
 			buildPhases = (
 				B83A5EB5586D467354C95563 /* [CP] Check Pods Manifest.lock */,
+				EED51E08257BEF680063E0E3 /* R.swift */,
 				EEAA34522577CEF1002DAD06 /* Sources */,
 				EEAA34532577CEF1002DAD06 /* Frameworks */,
 				EEAA34542577CEF1002DAD06 /* Resources */,
@@ -380,6 +387,7 @@
 				EE60DBE8257938750085083D /* SongInfoCollectionViewCell.xib in Resources */,
 				EEAA34662577CEF4002DAD06 /* LaunchScreen.storyboard in Resources */,
 				EEAA34632577CEF4002DAD06 /* Assets.xcassets in Resources */,
+				EED51E13257BF1D30063E0E3 /* Localizable.strings in Resources */,
 				EE60DBDC257930010085083D /* AlbumInfoCollectionViewCell.xib in Resources */,
 				EEAA349C2577E592002DAD06 /* AlbumCollectionViewCell.xib in Resources */,
 				EE60DB7825781CAC0085083D /* AlbumsListViewController.xib in Resources */,
@@ -429,6 +437,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EED51E08257BEF680063E0E3 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PRODUCT_NAME/Support/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PRODUCT_NAME/Support/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -438,6 +466,7 @@
 			files = (
 				EEAA34BC2577F038002DAD06 /* AlbumService.swift in Sources */,
 				EEAA349B2577E592002DAD06 /* AlbumCollectionViewCell.swift in Sources */,
+				EED51E0C257BF08C0063E0E3 /* R.generated.swift in Sources */,
 				EEAA34862577D5E5002DAD06 /* ViewModel.swift in Sources */,
 				EEAA347B2577D3A9002DAD06 /* AlbumsListViewController.swift in Sources */,
 				EE60DBF325793DB50085083D /* AlbumCopyrightCellViewModel.swift in Sources */,

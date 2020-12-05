@@ -6,5 +6,6 @@ target 'iTunesAlbums' do
   use_frameworks!
 
  pod 'SDWebImage'
+ pod 'R.swift'
 
 end

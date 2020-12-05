@@ -17,7 +17,7 @@ final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel, CellVi
 	let copyright: String
 
 	init(trackCount: Int, copyright: String){
-		self.songCount = "\(trackCount) songs"
+		self.songCount = "\(trackCount) " + R.string.localizable.songs()
 		self.copyright = copyright
 	}
 }
