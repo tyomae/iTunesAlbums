@@ -20,9 +20,12 @@ class BaseViewController<V: ViewModel>: UIViewController {
 	}
 
 	// MARK: - Public API
-	
+
+	/// Override this method to setup ViewController's ViewModel
 	func setupViewModel() { }
 	
+	/// Override this method to process ViewController's ViewModel states.
+	/// - Parameter state: ViewModel state. e. g. dataLoaded
 	func processViewModel(state: ViewModelType.State) { }
 	
 	// MARK: - Private logic

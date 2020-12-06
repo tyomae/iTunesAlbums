@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AlbumInfoCellViewModel {
+protocol AlbumInfoCellViewModel: CellViewModel {
 	var albumImageUrl: URL? { get }
 	var albumTitle: String { get }
 	var artistName: String { get }
@@ -15,7 +15,7 @@ protocol AlbumInfoCellViewModel {
 	var dateRelease: String { get }
 }
 
-final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel, CellViewModel {
+final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel {
 	
 	let albumImageUrl: URL?
 	let albumTitle: String

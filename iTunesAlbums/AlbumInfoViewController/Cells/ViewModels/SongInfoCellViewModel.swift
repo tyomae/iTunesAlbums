@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol SongInfoCellViewModel {
+protocol SongInfoCellViewModel: CellViewModel {
 	var songCount: String { get }
 	var songTitle: String { get }
 }
 
-final class SongInfoCellViewModelImpl: SongInfoCellViewModel, CellViewModel {
+final class SongInfoCellViewModelImpl: SongInfoCellViewModel {
 	
 	let songCount: String
 	let songTitle: String

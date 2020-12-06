@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 
 class AlbumInfoCollectionViewCell: UICollectionViewCell, ConfigurableView {
+	
 	@IBOutlet weak var albumTitleLabel: UILabel!
 	@IBOutlet weak var albumImageView: UIImageView!{
 		didSet {

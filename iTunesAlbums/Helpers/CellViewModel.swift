@@ -7,5 +7,5 @@
 
 import Foundation
 
-// TODO: - коммент 
+/// A type for union all Cell ViewModels
 protocol CellViewModel { }

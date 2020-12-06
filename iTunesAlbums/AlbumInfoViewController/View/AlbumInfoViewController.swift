@@ -50,6 +50,32 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 		}
 	}
 	
+	private func createLayout() -> UICollectionViewCompositionalLayout {
+		UICollectionViewCompositionalLayout { (section, environment) ->
+			NSCollectionLayoutSection? in
+			var estimatedHeight: CGFloat
+			switch self.viewModel.sections[section].type {
+				case .albumInfo:
+					estimatedHeight = CGFloat(120)
+				case .track:
+					estimatedHeight = CGFloat(33)
+				case .copyright:
+					estimatedHeight = CGFloat(60)
+			}
+			let layoutSize = NSCollectionLayoutSize(
+				widthDimension: .fractionalWidth(1.0),
+				heightDimension: .estimated(estimatedHeight)
+			)
+			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 1)
+			let section = NSCollectionLayoutSection(group: group)
+			section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+			return section
+		}
+	}
+	
+	// MARK: - UICollectionViewDataSource
+	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return self.viewModel.sections.count
 	}
@@ -74,29 +100,5 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 			return cell
 		}
 		fatalError("Unknowned cellViewModel")
-	}
-	
-	private func createLayout() -> UICollectionViewCompositionalLayout {
-		UICollectionViewCompositionalLayout { (section, environment) ->
-			NSCollectionLayoutSection? in
-			var estimatedHeight: CGFloat
-			switch self.viewModel.sections[section].type {
-				case .albumInfo:
-					estimatedHeight = CGFloat(120)
-				case .track:
-					estimatedHeight = CGFloat(33)
-				case .copyright:
-					estimatedHeight = CGFloat(60)
-			}
-			let layoutSize = NSCollectionLayoutSize(
-				widthDimension: .fractionalWidth(1.0),
-				heightDimension: .estimated(estimatedHeight)
-			)
-			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
-			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 1)
-			let section = NSCollectionLayoutSection(group: group)
-			section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-			return section
-		}
 	}
 }

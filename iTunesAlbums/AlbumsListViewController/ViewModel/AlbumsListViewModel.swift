@@ -17,7 +17,7 @@ final class AlbumsListViewModelImpl: ViewModel {
 	enum State {
 		case dataLoaded
 		case error(errorString: String)
-		case searchBarEmpty
+		case searchTextEmpty
 		case noResults
 	}
 	
@@ -49,7 +49,7 @@ final class AlbumsListViewModelImpl: ViewModel {
 	func getAlbums(searchText: String) {
 		if searchText.isEmpty {
 			self.cellViewModels.removeAll()
-			self.stateHandler?(.searchBarEmpty)
+			self.stateHandler?(.searchTextEmpty)
 			return
 		}
 		self.albumService.getAlbums(searchText: searchText) { [weak self] in
@@ -69,6 +69,7 @@ final class AlbumsListViewModelImpl: ViewModel {
 			self.updateCellViewModels()
 			self.stateHandler?(.noResults)
 		} else {
+			// Sorting by Albums title
 			self.searchingAlbums = albums.sorted {
 				return ($0.collectionName.localizedCaseInsensitiveCompare($1.collectionName) == .orderedAscending)
 			}

@@ -7,13 +7,17 @@
 
 import Foundation
 
+
 class BaseNetworkService {
+	
+	// MARK:- Variables
 	
 	let baseURL = "https://itunes.apple.com/"
 	
 	enum Method: String {
 		case GET
 	}
+	
 	private let urlSession: URLSession
 	
 	init() {
@@ -23,7 +27,14 @@ class BaseNetworkService {
 		self.urlSession = URLSession(configuration: config)
 	}
 	
+	// MARK:- Get Request Methods
 	
+	/// Request to given URL and convert to Decodable Object
+	/// - Parameters:
+	///   - endpoint: EndPoint for baseUrl
+	///   - method: HTTP request method
+	///   - completion: completion (Result, Error)
+	/// - Returns: A URL session task that returns downloaded data directly to the app in memory.
 	@discardableResult
 	func request<T: Decodable>(endpoint: String,
 							   method: Method,
@@ -37,9 +48,8 @@ class BaseNetworkService {
 		return call(with: request, completion: completion)
 	}
 	
-	@discardableResult
-	func call<T: Decodable>(with request: URLRequest,
-							completion: @escaping((Result<T, APIError>) -> Void)) -> URLSessionDataTask {
+	private func call<T: Decodable>(with request: URLRequest,
+									completion: @escaping((Result<T, APIError>) -> Void)) -> URLSessionDataTask {
 		let dataTask = self.urlSession.dataTask(with: request) { (data, response, error) in
 			if let data = data, let object = try? JSONDecoder().decode(T.self, from: data) {
 				DispatchQueue.main.async {

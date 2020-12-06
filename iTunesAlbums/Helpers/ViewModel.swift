@@ -8,7 +8,10 @@
 import Foundation
 
 protocol ViewModel {
+	
+	/// View's action e. g. reload, delete(atIndex: IndexPath)
 	associatedtype Action
+	/// ViewModel's state e. g. dataLoaded
 	associatedtype State
 	
 	/// ViewModel can handle self state. e. g. dataUpdated or error
@@ -18,9 +21,11 @@ protocol ViewModel {
 	func process(action: Action)
 }
 
+/// Default implementation of View's action
 enum ViewModelAction { }
 
 extension ViewModel {
-	 
+	
+	// Default implementation. View can not have any actions
 	func process(action: ViewModelAction) { }
 }

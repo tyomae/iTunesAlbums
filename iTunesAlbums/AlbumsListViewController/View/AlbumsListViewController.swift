@@ -58,7 +58,7 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 				self.infoStackView.isHidden  = false
 				self.noResultsLabel.isHidden = true
 				self.backgroundImage.isHidden = true
-			case .searchBarEmpty:
+			case .searchTextEmpty:
 				self.backgroundImage.isHidden = false
 				self.infoStackView.isHidden = true
 				self.noResultsLabel.isHidden = true

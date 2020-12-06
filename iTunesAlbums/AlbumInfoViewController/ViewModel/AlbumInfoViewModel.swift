@@ -87,12 +87,8 @@ final class AlbumInfoViewModelImpl: ViewModel {
 		let albumCopyrightCellViewModel = AlbumCopyrightCellViewModelImpl(trackCount: self.album.trackCount,
 																		  copyright: self.album.copyright ?? "")
 		
-		self.sections = [Section(cellViewModels: [albumInfoCellViewModel],
-								 type: .albumInfo),
-						 Section(cellViewModels: songsCellViewModels,
-								 type: .track),
-						 Section(cellViewModels: [albumCopyrightCellViewModel],
-								 type: .copyright)
-		]
+		self.sections = [Section(cellViewModels: [albumInfoCellViewModel], type: .albumInfo),
+						 Section(cellViewModels: songsCellViewModels, type: .track),
+						 Section(cellViewModels: [albumCopyrightCellViewModel], type: .copyright)]
 	}
 }

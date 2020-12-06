@@ -8,6 +8,7 @@
 import UIKit
 
 class SongInfoCollectionViewCell: UICollectionViewCell, ConfigurableView {
+	
 	@IBOutlet weak var songNumberLabel: UILabel!
 	@IBOutlet weak var songTitleLabel: UILabel!
 	

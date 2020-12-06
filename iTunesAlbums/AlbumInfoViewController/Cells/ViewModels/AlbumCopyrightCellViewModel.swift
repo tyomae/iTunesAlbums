@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol AlbumCopyrightCellViewModel {
+protocol AlbumCopyrightCellViewModel: CellViewModel {
 	var songCount: String { get }
 	var copyright: String { get }
 }
 
-final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel, CellViewModel {
+final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel {
 	
 	let songCount: String
 	let copyright: String

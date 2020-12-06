@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// A type that can configured with ConfigurationModel.
+/// Using with custom views for separation data logic and view logic
 protocol ConfigurableView {
 	
 	associatedtype ConfigurationModel

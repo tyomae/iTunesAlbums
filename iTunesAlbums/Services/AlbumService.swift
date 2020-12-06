@@ -34,7 +34,7 @@ class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
 		guard let searchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
 			return
 		}
-		
+		// Сanceling the previous request to avoid unnecessary old responses
 		self.lastGetAlbumsRequest?.cancel()
 		self.lastGetAlbumsRequest = request(endpoint: Endpoint.albumsList(searchText: searchText).stringEndPoint, method: .GET, completion: completion)
 	}
