@@ -43,7 +43,6 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 				self.collectionView.isHidden = false
 				self.collectionView.reloadData()
 			case .error(let error):
-				print(error)
 				self.activityIndicator.stopAnimating()
 				self.errorLabel.text = error
 				self.errorLabel.isHidden = false
@@ -95,9 +94,8 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 			)
 			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
 			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 1)
-			group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
 			let section = NSCollectionLayoutSection(group: group)
-			section.interGroupSpacing = 10
+			section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
 			return section
 		}
 	}

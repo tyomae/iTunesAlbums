@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eB2-eH-cpu">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYI-X9-h6g">
                         <size key="itemSize" width="128" height="128"/>
@@ -53,7 +53,7 @@
             <constraints>
                 <constraint firstItem="WGI-EM-jlM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0th-aB-4MI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eB2-eH-cpu" secondAttribute="trailing" id="9UP-Ft-y8R"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eB2-eH-cpu" secondAttribute="bottom" id="9Ur-hm-wc9"/>
+                <constraint firstAttribute="bottom" secondItem="eB2-eH-cpu" secondAttribute="bottom" id="9Ur-hm-wc9"/>
                 <constraint firstItem="WGI-EM-jlM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Cgf-U1-7PY"/>
                 <constraint firstItem="eB2-eH-cpu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X0a-6P-Zqt"/>
                 <constraint firstItem="WGI-EM-jlM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="csf-Vl-w4e"/>

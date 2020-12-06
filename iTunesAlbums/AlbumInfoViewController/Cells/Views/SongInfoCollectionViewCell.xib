@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-kp-TDr">
-                        <rect key="frame" x="5" y="12.5" width="21" height="20.5"/>
+                        <rect key="frame" x="5" y="14" width="21" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="21" id="FAU-Sh-ci5"/>
                         </constraints>
@@ -28,7 +28,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uN1-70-Nmu">
-                        <rect key="frame" x="36" y="5" width="145" height="35"/>
+                        <rect key="frame" x="36" y="0.0" width="145" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="SWa-Yu-Dcs"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,8 +54,8 @@
                 <constraint firstAttribute="bottom" secondItem="ETj-Fm-ZHW" secondAttribute="bottom" id="aUC-fx-0fK"/>
                 <constraint firstAttribute="trailing" secondItem="ETj-Fm-ZHW" secondAttribute="trailing" id="lTd-Bw-AjI"/>
                 <constraint firstAttribute="trailing" secondItem="uN1-70-Nmu" secondAttribute="trailing" constant="8" id="r5O-rr-5fL"/>
-                <constraint firstItem="ETj-Fm-ZHW" firstAttribute="top" secondItem="uN1-70-Nmu" secondAttribute="bottom" constant="8" id="wrl-Y7-yCU"/>
-                <constraint firstItem="uN1-70-Nmu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="yYN-FU-JZ8"/>
+                <constraint firstItem="ETj-Fm-ZHW" firstAttribute="top" secondItem="uN1-70-Nmu" secondAttribute="bottom" id="wrl-Y7-yCU"/>
+                <constraint firstItem="uN1-70-Nmu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yYN-FU-JZ8"/>
             </constraints>
             <size key="customSize" width="189" height="49"/>
             <connections>

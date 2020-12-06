@@ -17,14 +17,11 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 		}
 	}
 	@IBOutlet weak var backgroundImage: UIImageView!
-	@IBOutlet weak var errorLabel: UILabel! {
-		didSet {
-			self.errorLabel.isHidden = true
-		}
-	}
+	@IBOutlet weak var errorLabel: UILabel!
+	@IBOutlet weak var noResultsLabel: UILabel!
+	@IBOutlet weak var infoStackView: UIStackView!
 	@IBOutlet weak var retryButton: UIButton! {
 		didSet {
-			self.retryButton.isHidden = true
 			self.retryButton.setTitle(R.string.localizable.retry(), for: .normal)
 			self.retryButton.layer.cornerRadius = 8
 			self.retryButton.layer.borderWidth = 1
@@ -52,22 +49,26 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	override func processViewModel(state: AlbumsListViewModelImpl.State) {
 		switch state {
 			case .dataLoaded:
-				self.errorLabel.isHidden = true
-				self.collectionView.isHidden = false
-				self.retryButton.isHidden = true
-				self.collectionView.reloadData()
+				self.infoStackView.isHidden = true
+				self.collectionView.setContentOffset(.zero, animated: false)
 				self.backgroundImage.isHidden = true
+				self.noResultsLabel.isHidden = true
 			case .error(let error):
 				self.errorLabel.text = error
-				self.errorLabel.isHidden = false
-				self.collectionView.isHidden = true
-				self.retryButton.isHidden = false
+				self.infoStackView.isHidden  = false
+				self.noResultsLabel.isHidden = true
+				self.backgroundImage.isHidden = true
 			case .searchBarEmpty:
-				self.errorLabel.isHidden = true
-				self.collectionView.isHidden = true
 				self.backgroundImage.isHidden = false
-				self.retryButton.isHidden = true
+				self.infoStackView.isHidden = true
+				self.noResultsLabel.isHidden = true
+			case .noResults:
+				self.infoStackView.isHidden = true
+				self.backgroundImage.isHidden = true
+				self.noResultsLabel.isHidden = false
+				self.noResultsLabel.text = R.string.localizable.no_results()
 		}
+		self.collectionView.reloadData()
 	}
 	
 	@IBAction func retryButtonTouched(_ sender: Any) {
@@ -83,11 +84,10 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 			)
 			let item = NSCollectionLayoutItem(layoutSize: layoutSize)
 			let group = NSCollectionLayoutGroup.horizontal(layoutSize: layoutSize, subitem: item, count: 3)
-			group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 20, trailing: 20)
 			group.interItemSpacing = NSCollectionLayoutSpacing.fixed(16.0)
 			let section = NSCollectionLayoutSection(group: group)
 			section.interGroupSpacing = 16
-			section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0)
+			section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
 			return section
 		}
 	}
@@ -95,10 +95,10 @@ class AlbumsListViewController: BaseViewController<AlbumsListViewModelImpl>, UIC
 	private func setupSearchBar() {
 		self.searchController = UISearchController(searchResultsController: nil)
 		self.searchController.searchResultsUpdater = self
-		searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.search_albums(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemIndigo])
+		self.searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: R.string.localizable.search_albums(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemIndigo])
 		self.searchController.obscuresBackgroundDuringPresentation = false
 		self.navigationItem.hidesSearchBarWhenScrolling = false
-		self.navigationItem.searchController = searchController
+		self.navigationItem.searchController = self.searchController
 		
 		self.definesPresentationContext = true
 	}

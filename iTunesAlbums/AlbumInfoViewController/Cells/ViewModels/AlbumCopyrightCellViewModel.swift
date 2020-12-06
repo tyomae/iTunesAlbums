@@ -13,6 +13,7 @@ protocol AlbumCopyrightCellViewModel {
 }
 
 final class AlbumCopyrightCellViewModelImpl: AlbumCopyrightCellViewModel, CellViewModel {
+	
 	let songCount: String
 	let copyright: String
 

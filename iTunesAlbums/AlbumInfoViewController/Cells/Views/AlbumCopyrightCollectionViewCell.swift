@@ -8,6 +8,7 @@
 import UIKit
 
 class AlbumCopyrightCollectionViewCell: UICollectionViewCell, ConfigurableView {
+	
 	@IBOutlet weak var songCountLabel: UILabel!
 	@IBOutlet weak var copyrightLabel: UILabel!
 	

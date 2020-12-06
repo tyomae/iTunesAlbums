@@ -13,6 +13,7 @@ protocol SongInfoCellViewModel {
 }
 
 final class SongInfoCellViewModelImpl: SongInfoCellViewModel, CellViewModel {
+	
 	let songCount: String
 	let songTitle: String
 

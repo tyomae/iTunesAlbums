@@ -11,7 +11,7 @@
         <!--Albums List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AlbumsListViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="AlbumsListViewController" customModule="iTunesAlbums" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Ma5-Lt-AjC"/>
                     <connections>
                         <segue destination="gBL-ca-yNh" kind="show" identifier="segue" id="p6a-BD-7Nq"/>

@@ -22,9 +22,8 @@ class AlbumInfoCollectionViewCell: UICollectionViewCell, ConfigurableView {
 	
 	func configure(with model: AlbumInfoCellViewModel) {
 		self.albumTitleLabel.text = model.albumTitle
-		//TODO: проверить можно ли одинаковый код вынести за пределы в отдельный файл
-		albumImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
-		albumImageView.sd_setImage(with: model.albumImageUrl) { [weak self] (image, _, _, _) in
+		self.albumImageView.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+		self.albumImageView.sd_setImage(with: model.albumImageUrl) { [weak self] (image, _, _, _) in
 			if image == nil {
 				self?.albumImageView.image = #imageLiteral(resourceName: "noPhoto")
 			}

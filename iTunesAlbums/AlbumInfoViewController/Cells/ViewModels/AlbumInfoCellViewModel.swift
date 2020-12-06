@@ -16,6 +16,7 @@ protocol AlbumInfoCellViewModel {
 }
 
 final class AlbumInfoCellViewModelImpl: AlbumInfoCellViewModel, CellViewModel {
+	
 	let albumImageUrl: URL?
 	let albumTitle: String
 	let artistName: String

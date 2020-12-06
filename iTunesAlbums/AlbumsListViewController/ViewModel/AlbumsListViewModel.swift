@@ -8,16 +8,17 @@
 import Foundation
 
 final class AlbumsListViewModelImpl: ViewModel {
-	
+
 	var stateHandler: ((State) -> Void)?
 	var searchingAlbums = [Album]()
 	var cellViewModels = [AlbumCellViewModel]()
-	var albumService = AlbumServiceServiceImpl()
+	private var albumService = AlbumServiceServiceImpl()
 	
 	enum State {
 		case dataLoaded
 		case error(errorString: String)
 		case searchBarEmpty
+		case noResults
 	}
 	
 	enum Action {
@@ -43,7 +44,6 @@ final class AlbumsListViewModelImpl: ViewModel {
 													   artistTitle: album.artistName)
 			self.cellViewModels.append(cellViewModel)
 		}
-		self.stateHandler?(.dataLoaded)
 	}
 	
 	func getAlbums(searchText: String) {
@@ -56,17 +56,25 @@ final class AlbumsListViewModelImpl: ViewModel {
 			guard let self = self else { return }
 			switch $0 {
 				case let .success(albums):
-					self.searchingAlbums = self.sortAlbumsByAlphabet(albums: albums.results)
+					self.processAlbums(albums: albums.results)
 				case let .failure(error):
 					self.stateHandler?(.error(errorString: error.stringError))
 			}
 		}
-		self.updateCellViewModels()
 	}
 	
-	private func sortAlbumsByAlphabet(albums: [Album]) -> [Album] {
-		albums.sorted {
-			return ($0.collectionName.localizedCaseInsensitiveCompare($1.collectionName) == .orderedAscending)
+	private func processAlbums(albums: [Album]) {
+		if albums.isEmpty {
+			self.searchingAlbums.removeAll()
+			self.updateCellViewModels()
+			self.stateHandler?(.noResults)
+		} else {
+			self.searchingAlbums = albums.sorted {
+				return ($0.collectionName.localizedCaseInsensitiveCompare($1.collectionName) == .orderedAscending)
+			}
+			self.updateCellViewModels()
+			self.stateHandler?(.dataLoaded)
 		}
+	
 	}
 }

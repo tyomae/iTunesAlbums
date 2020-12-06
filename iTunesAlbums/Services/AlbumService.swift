@@ -34,8 +34,9 @@ class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
 		guard let searchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
 			return
 		}
-		lastGetAlbumsRequest?.cancel()
-		lastGetAlbumsRequest = request(endpoint: Endpoint.albumsList(searchText: searchText).stringEndPoint, method: .GET, completion: completion)
+		
+		self.lastGetAlbumsRequest?.cancel()
+		self.lastGetAlbumsRequest = request(endpoint: Endpoint.albumsList(searchText: searchText).stringEndPoint, method: .GET, completion: completion)
 	}
 	
 	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void)) {

@@ -79,18 +79,19 @@ final class AlbumInfoViewModelImpl: ViewModel {
 	}
 	
 	private func updateSections() {
-		self.sections = [Section(cellViewModels: [AlbumInfoCellViewModelImpl(
-													albumImageUrl: self.album.artworkUrl100,
-													albumTitle: self.album.collectionName,
-													artistTitle: self.album.artistName,
-													albumGenre: self.album.primaryGenreName,
-													dateRelease: self.album.releaseDate)],
+		let albumInfoCellViewModel = AlbumInfoCellViewModelImpl(albumImageUrl: self.album.artworkUrl100,
+																albumTitle: self.album.collectionName,
+																artistTitle: self.album.artistName,
+																albumGenre: self.album.primaryGenreName,
+																dateRelease: self.album.releaseDate)
+		let albumCopyrightCellViewModel = AlbumCopyrightCellViewModelImpl(trackCount: self.album.trackCount,
+																		  copyright: self.album.copyright ?? "")
+		
+		self.sections = [Section(cellViewModels: [albumInfoCellViewModel],
 								 type: .albumInfo),
 						 Section(cellViewModels: songsCellViewModels,
 								 type: .track),
-						 Section(cellViewModels: [AlbumCopyrightCellViewModelImpl(
-													trackCount: self.album.trackCount,
-													copyright: self.album.copyright ?? "")],
+						 Section(cellViewModels: [albumCopyrightCellViewModel],
 								 type: .copyright)
 		]
 	}

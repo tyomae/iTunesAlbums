@@ -8,6 +8,7 @@
 import UIKit
 
 class BaseViewController<V: ViewModel>: UIViewController {
+	
 	typealias ViewModelType = V
 	
 	var viewModel: ViewModelType!

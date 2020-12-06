@@ -16,12 +16,12 @@ class BaseNetworkService {
 	}
 	private let urlSession: URLSession
 	
-		init() {
-			let config = URLSessionConfiguration.default
-			config.requestCachePolicy = .reloadIgnoringLocalCacheData
-			config.urlCache = nil
-			self.urlSession = URLSession(configuration: config)
-		}
+	init() {
+		let config = URLSessionConfiguration.default
+		config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+		config.urlCache = nil
+		self.urlSession = URLSession(configuration: config)
+	}
 	
 	
 	@discardableResult
@@ -30,8 +30,7 @@ class BaseNetworkService {
 							   completion: @escaping((Result<T, APIError>) -> Void)) -> URLSessionDataTask? {
 		let path = "\(baseURL)\(endpoint)"
 		guard let url = URL(string: path)
-			else { completion(.failure(.internalError)); return nil }
-		
+		else { completion(.failure(.internalError)); return nil }
 		var request = URLRequest(url: url)
 		request.httpMethod = "\(method)"
 		
@@ -46,16 +45,19 @@ class BaseNetworkService {
 				DispatchQueue.main.async {
 					completion(Result.success(object))
 				}
-			} else if let error = error as NSError?, error.domain == NSURLErrorDomain, error.code == NSURLErrorNotConnectedToInternet {
-				DispatchQueue.main.async {
-					completion(Result.failure(.noInternet))
+			} else if let error = error as NSError? {
+				let apiError: APIError
+				if error.domain == NSURLErrorDomain, error.code == NSURLErrorNotConnectedToInternet {
+					apiError = .noInternet
+				} else if error.code == NSURLErrorCancelled {
+					return
+				} else {
+					apiError = .serverError
 				}
-			} else {
 				DispatchQueue.main.async {
-					completion(Result.failure(.serverError))
+					completion(Result.failure(apiError))
 				}
 			}
-			
 		}
 		dataTask.resume()
 		return dataTask

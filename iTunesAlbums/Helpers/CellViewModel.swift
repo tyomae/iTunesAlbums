@@ -7,4 +7,5 @@
 
 import Foundation
 
+// TODO: - коммент 
 protocol CellViewModel { }

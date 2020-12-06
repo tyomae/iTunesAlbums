@@ -27,7 +27,8 @@ class AlbumCollectionViewCell: UICollectionViewCell, ConfigurableView {
 				self?.albumImageView.image = #imageLiteral(resourceName: "noPhoto")
 			}
 		}
-		self.albumTitleLabel.text  = model.albumTitle
-		self.artistLabel.text  =  model.artistTitle
+		
+		self.albumTitleLabel.text = model.albumTitle
+		self.artistLabel.text = model.artistTitle
 	}
 }

@@ -14,6 +14,8 @@
                 <outlet property="backgroundImage" destination="WTO-gA-8Td" id="nD3-Xu-x3H"/>
                 <outlet property="collectionView" destination="TTa-z7-9e4" id="KR0-wg-8uJ"/>
                 <outlet property="errorLabel" destination="HbF-c4-MQg" id="YsM-IL-Z1W"/>
+                <outlet property="infoStackView" destination="KNa-QO-pRT" id="qKS-BJ-b8W"/>
+                <outlet property="noResultsLabel" destination="nQ7-GC-3f3" id="Ssn-aE-FCk"/>
                 <outlet property="retryButton" destination="DN2-R5-KVd" id="f9y-kz-2cD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,7 +38,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wave" translatesAutoresizingMaskIntoConstraints="NO" id="WTO-gA-8Td">
                     <rect key="frame" x="82" y="353" width="250" height="200"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KNa-QO-pRT">
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KNa-QO-pRT">
                     <rect key="frame" x="157" y="416" width="100" height="69.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-c4-MQg">
@@ -60,6 +62,12 @@
                         </button>
                     </subviews>
                 </stackView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO RESULTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ7-GC-3f3">
+                    <rect key="frame" x="10" y="439.5" width="394" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                    <color key="textColor" systemColor="systemGrayColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,11 +75,15 @@
                 <constraint firstItem="TTa-z7-9e4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3lJ-lr-SRd"/>
                 <constraint firstItem="WTO-gA-8Td" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="AIT-5n-BUU"/>
                 <constraint firstItem="WTO-gA-8Td" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerXWithinMargins" id="QIQ-1E-Kwa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nQ7-GC-3f3" secondAttribute="trailing" constant="10" id="RmQ-du-8v3"/>
+                <constraint firstItem="nQ7-GC-3f3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Vow-Wc-hMW"/>
                 <constraint firstItem="KNa-QO-pRT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bKR-s5-RbU"/>
                 <constraint firstAttribute="bottom" secondItem="TTa-z7-9e4" secondAttribute="bottom" id="baY-yv-byl"/>
                 <constraint firstItem="TTa-z7-9e4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="f79-ip-0Pr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TTa-z7-9e4" secondAttribute="trailing" id="gp4-MO-huu"/>
+                <constraint firstItem="nQ7-GC-3f3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kNL-Ev-lAq"/>
                 <constraint firstItem="KNa-QO-pRT" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-2.25" id="twp-Io-SPT"/>
+                <constraint firstItem="nQ7-GC-3f3" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="uFN-RE-YYW"/>
             </constraints>
             <point key="canvasLocation" x="-184.05797101449278" y="84.375"/>
         </view>
@@ -80,6 +92,9 @@
         <image name="wave" width="250" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
