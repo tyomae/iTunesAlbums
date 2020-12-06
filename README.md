@@ -1,7 +1,7 @@
 # iTunesAlbums
 iTunes Albums App
 ## General info
-iTunesAlbums is the application for the iPhone that displays information about musical albums from [iTunesApi](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-%20web-service-search-api/). If you want to see detailed information about the albums you are interested in - just enter title in the search bar.
+iTunesAlbums is the application for the iPhone that displays information about musical albums from [iTunesApi](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-%20web-service-search-api/). If you want to see detailed information about the albums you are interested in - just enter title or artist name in the search bar.
 
 ## Screenshots  
 # iTunesAlbums
