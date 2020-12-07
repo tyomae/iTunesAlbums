@@ -22,6 +22,5 @@ struct SongsResult: Decodable {
 
 struct Song: Decodable {
 	let trackName: String?
-	let previewUrl: String?
 	let trackNumber: Int?
 }
