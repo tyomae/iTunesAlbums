@@ -36,17 +36,18 @@ class AlbumInfoViewController: BaseViewController<AlbumInfoViewModelImpl>, UICol
 				self.activityIndicator.startAnimating()
 				self.errorLabel.isHidden = false
 				self.errorLabel.text = R.string.localizable.loading()
-				self.collectionView.isHidden = true
+//				self.collectionView.isHidden = false
+				self.collectionView.reloadData()
 			case .dataLoaded:
 				self.activityIndicator.stopAnimating()
 				self.errorLabel.isHidden = true
-				self.collectionView.isHidden = false
+//				self.collectionView.isHidden = false
 				self.collectionView.reloadData()
 			case .error(let error):
 				self.activityIndicator.stopAnimating()
 				self.errorLabel.text = error
 				self.errorLabel.isHidden = false
-				self.collectionView.isHidden = true
+//				self.collectionView.isHidden = true
 		}
 	}
 	

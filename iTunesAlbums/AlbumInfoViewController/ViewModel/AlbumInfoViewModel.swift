@@ -39,6 +39,12 @@ final class AlbumInfoViewModelImpl: ViewModel {
 	
 	init(album: Album) {
 		self.album = album
+		let albumInfoCellViewModel = AlbumInfoCellViewModelImpl(albumImageUrl: self.album.artworkUrl100,
+																albumTitle: self.album.collectionName,
+																artistTitle: self.album.artistName,
+																albumGenre: self.album.primaryGenreName,
+																dateRelease: self.album.releaseDate)
+		self.sections.append(Section(cellViewModels: [albumInfoCellViewModel], type: .albumInfo))
 	}
 	
 	func process(action: Action) {
@@ -50,9 +56,8 @@ final class AlbumInfoViewModelImpl: ViewModel {
 	
 	private func getSongs() {
 		self.stateHandler?(.loading)
-		self.albumService.getCurrentAlbum(albumId: self.album.collectionId) { [weak self] in
+		self.albumService.getAlbumSongs(albumId: self.album.collectionId) { [weak self] in
 			guard let self = self else { return }
-			
 			switch $0 {
 				case let .success(songs):
 					self.songs = songs.results
@@ -79,16 +84,9 @@ final class AlbumInfoViewModelImpl: ViewModel {
 	}
 	
 	private func updateSections() {
-		let albumInfoCellViewModel = AlbumInfoCellViewModelImpl(albumImageUrl: self.album.artworkUrl100,
-																albumTitle: self.album.collectionName,
-																artistTitle: self.album.artistName,
-																albumGenre: self.album.primaryGenreName,
-																dateRelease: self.album.releaseDate)
 		let albumCopyrightCellViewModel = AlbumCopyrightCellViewModelImpl(trackCount: self.album.trackCount,
 																		  copyright: self.album.copyright ?? "")
-		
-		self.sections = [Section(cellViewModels: [albumInfoCellViewModel], type: .albumInfo),
-						 Section(cellViewModels: songsCellViewModels, type: .track),
-						 Section(cellViewModels: [albumCopyrightCellViewModel], type: .copyright)]
+		self.sections.append(Section(cellViewModels: songsCellViewModels, type: .track))
+		self.sections.append(Section(cellViewModels: [albumCopyrightCellViewModel], type: .copyright))
 	}
 }

@@ -76,6 +76,5 @@ final class AlbumsListViewModelImpl: ViewModel {
 			self.updateCellViewModels()
 			self.stateHandler?(.dataLoaded)
 		}
-	
 	}
 }

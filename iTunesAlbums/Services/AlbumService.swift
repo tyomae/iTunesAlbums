@@ -9,7 +9,7 @@ import Foundation
 
 protocol AlbumService {
 	func getAlbums(searchText: String, completion: @escaping((Result<AlbumsResult, APIError>) -> Void))
-	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void))
+	func getAlbumSongs(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void))
 }
 
 class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
@@ -39,7 +39,7 @@ class AlbumServiceServiceImpl: BaseNetworkService, AlbumService {
 		self.lastGetAlbumsRequest = request(endpoint: Endpoint.albumsList(searchText: searchText).stringEndPoint, method: .GET, completion: completion)
 	}
 	
-	func getCurrentAlbum(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void)) {
+	func getAlbumSongs(albumId: Int, completion: @escaping((Result<SongsResult, APIError>) -> Void)) {
 		request(endpoint: Endpoint.currentAlbum(albumId: albumId).stringEndPoint, method: .GET, completion: completion)
 	}
 }
